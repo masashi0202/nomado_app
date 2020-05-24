@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   # ビルドジョブ
   build:
-    working_directory: /app
+    working_directory: ~/app
     docker:
       - image: circleci/node:12.16.3
     steps:
@@ -36,7 +36,7 @@ jobs:
 
   # デプロイジョブ
   deploy:
-    working_directory: /app
+    working_directory: ~/app
     docker:
       - image: circleci/node:12.16.3
     steps:
