@@ -1,0 +1,15 @@
+version: '3'
+services:
+  node:
+    build: .
+    ports:
+      - 8080:8080
+    # ローカルのdocker-compose.ymlファイルが格納されているディレクトリの内容をコンテナの/appディレクトリにコピー
+    volumes:
+      - .:/app
+    # コンテナ作成後、コンテナの標準入力をオープンのままにする
+    stdin_open: true
+    # ttyの設定がないとコンテナに制御端末として割り当てられず、コンテナ起動直後に停止してしまう。「-it」オプションを付加してdocker runコマンドを実行すればコンテナを制御できるようになる。
+    tty: true
+    # 「docker run」実行時にデフォルトで実行されるコマンドを指定
+    command: /bin/sh
