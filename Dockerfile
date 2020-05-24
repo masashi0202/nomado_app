@@ -2,6 +2,6 @@ FROM node:lts-alpine
 
 WORKDIR /app
 
-# npmインストールコマンドに「-g」を入れると、ローカル環境へもグローバルインストールされてしまう。「-D」もしくは「--save」をつける。
+# 「-g」をつけても、あくまでコンテナ内の環境でグローバルインストールされるため、ローカルへは影響ない
 RUN apk update && \
-    npm install -D npm @vue/cli@3.5.0
+    npm install -g @vue/cli@3.5.0
