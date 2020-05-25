@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "nomado-map"
+    "default": "nomado-map",
+    "production": "nomado-map"
   }
 }
