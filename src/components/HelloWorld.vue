@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: 'nomado-map',
+  name: 'HelloWorld',
   props: {
     msg: String
   }
