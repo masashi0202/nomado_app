@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to nomado-map2"/>
+    <HelloWorld msg="Welcome to nomado-map1"/>
   </div>
 </template>
 

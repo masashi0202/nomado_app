@@ -9,10 +9,10 @@ jobs:
       # チェックアウトとは、リポジトリからファイルを取得すること。
       - checkout
       # 依存関係のキャッシュ
-      # - restore_cache:
-      #     keys:
-      #       - npm-dependencies-{{ checksum "package-lock.json" }}
-      #       - npm-dependencies-
+      - restore_cache:
+          keys:
+            - npm-dependencies-{{ checksum "package-lock.json" }}
+            - npm-dependencies-
       # name、commandの先頭にインデントをいれていなかったためエラーに引っかかった
       - run:
           name: Install Dependency
@@ -22,12 +22,12 @@ jobs:
           name: Build
           command: npm run build
       # キャッシュを保存
-      # - save_cache:
-      #     key: npm-dependencies-{{ checksum "package-lock.json" }}
-      #     paths:
-      #       - ~/app/node_modules
-      #       - ~/app/dist
-      #     force: yes
+      - save_cache:
+          key: npm-dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/app/node_modules
+            - ~/app/dist
+          force: yes
       - run:
           name: deploy
           # command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
